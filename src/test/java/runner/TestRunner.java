@@ -11,7 +11,13 @@ import org.junit.runner.RunWith;
         // then we have to connect the feature steps with step definitions
         // for this we will use "glue" to provide the location to step definitions
         // to provide location of steps we start wil by default "src/test/java"
-        glue = "step_definitions"
+        glue = "step_definitions",
+        // dryRun will make sure that all the steps have a defined method
+        // if it is set to tru it won't run the test but just check if all steps are defined
+        // if set to false it will run the tests regularly
+        dryRun = false,
+        tags = "@loginInvalid or @loginValid",
+        monochrome = true
 )
 public class TestRunner {
     // no code need inside of this class!

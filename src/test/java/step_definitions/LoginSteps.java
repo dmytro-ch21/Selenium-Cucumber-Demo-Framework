@@ -40,4 +40,22 @@ public class LoginSteps {
         Assert.assertEquals( "Welcome message verification failed", expectedWelcomeMessage, actualWelcomeMessage);
     }
 
+    @Then("framework browser quit")
+    public void framework_browser_quit() {
+        driver.quit();
+    }
+
+    @When("user enters invalid username and password")
+    public void user_enters_invalid_username_and_password() {
+        loginPage.usernameInputBox.sendKeys("invalid");
+        loginPage.passwordInputBox.sendKeys("invalid");
+    }
+    @Then("user can see an error message")
+    public void user_can_see_an_error_message() {
+        String actualErrorMessage = loginPage.errorMessage.getText();
+        String expectedErrorMessage = "Invalid credentials";
+        Assert.assertEquals("Error message verification failed", expectedErrorMessage, actualErrorMessage);
+    }
+
+
 }
