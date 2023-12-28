@@ -1,13 +1,12 @@
 # 📝 Selenium-Cucumber-Framework Documentation
 
-| Tool     | Intention                            | Version  |
-|:---------|:-------------------------------------|----------|
-| Java     | Programming Language                 | JDK - 20 |
-| Maven    | Build Tool and Dependency Management | 3.9.5    |
-| Selenium | UI Test Automation                   | 4.15.0   |
-| JUnit    | Test Framework                       | 4.13.2   |
-| Cucumber | BDD Framework                        | 7.15.0   |
-
+| Tool     | Intention                            |  Version   |                          Docs                           |
+|:---------|:-------------------------------------|:----------:|:-------------------------------------------------------:|
+| Java     | Programming Language                 |  JDK - 20  |   [JDK20](https://docs.oracle.com/en/java/javase/20/)   |
+| Maven    | Build Tool and Dependency Management |   3.9.5    |  [Maven 3](https://maven.apache.org/guides/index.html)  |
+| Selenium | UI Test Automation                   |   4.15.0   |  [Selenium 4](https://www.selenium.dev/documentation/)  |
+| JUnit    | Test Framework                       |   4.13.2   |          [JUnit 4](https://junit.org/junit4/)           |
+| Cucumber | BDD Framework                        |   7.15.0   |    [Cucumber 7](https://cucumber.io/docs/cucumber/)     |
 
 ## 🛠 Framework Creation
 
@@ -33,8 +32,8 @@
       ```
 
 4. **Start by creating your first Cucumber file** 🥒
-   - feature-name.feature
-   - make sure the file extension is `.feature`
+    - feature-name.feature
+    - make sure the file extension is `.feature`
 
 5. **Add necessary plugins** 🔄
     - Cucumber for Java
@@ -55,27 +54,27 @@
     - II. Create a TestRunner class connecting feature file steps with Java methods from step definitions
         - TestRunner uses JUnit 4 annotation @RunWith() to run tests with Cucumber.class type
             - Customize binding and framework execution with @CucumberOptions():
-              - `feature = "path/to/features"`: provides the path to features of the framework
-              - `glue = "step definitions location"`: connects the step definitions with feature files steps
-              - `dryRun = true/false` options:
-                  - If set to true, it checks if all steps in the feature file are defined but doesn't run test cases
-                  - If set to false, it runs the test cases and throws an error if steps aren't defined
-              - `monochrome = true` : makes the console logs more readable
-              - `plugin = {""}`
-              - `tags = "@smoke"`
-                ```java
-                @RunWith(Cucumber.class)
-                @CucumberOptions(
-                    features = "src/test/resources/features",
-                    glue = "step_definitions",
-                    monochrome = true,
-                    dryRun = false,
-                    tags = ("@runValid and @smoke")
-                )
-                public class TestRunner {
-                // no need to add code here
-                }
-                ```
+                - `feature = "path/to/features"`: provides the path to features of the framework
+                - `glue = "step definitions location"`: connects the step definitions with feature files steps
+                - `dryRun = true/false` options:
+                    - If set to true, it checks if all steps in the feature file are defined but doesn't run test cases
+                    - If set to false, it runs the test cases and throws an error if steps aren't defined
+                - `monochrome = true` : makes the console logs more readable
+                - `plugin = {""}`
+                - `tags = "@smoke"`
+                  ```java
+                  @RunWith(Cucumber.class)
+                  @CucumberOptions(
+                      features = "src/test/resources/features",
+                      glue = "step_definitions",
+                      monochrome = true,
+                      dryRun = false,
+                      tags = ("@runValid and @smoke")
+                  )
+                  public class TestRunner {
+                  // no need to add code here
+                  }
+                  ```
 7. **Cucumber Keywords definitions in feature files** 🗝️
     - **`Feature`:** _Short description of the feature to be tested_
         - Examples:
@@ -149,7 +148,8 @@
         - **`*`** - _Asterisks:_
             - _The asterisk * is a more generic step keyword that can be used in place of any of the other keywords (
               Given, When, Then, And, But)._
-            - _It is often used when the specific type of step (setup, action, or assertion) is either clear from context
+            - _It is often used when the specific type of step (setup, action, or assertion) is either clear from
+              context
               or not important to the clarity of the scenario._
             - _The use of * doesn't imply a technical or undefined behavior; it's more about flexibility in writing
               the scenario._
