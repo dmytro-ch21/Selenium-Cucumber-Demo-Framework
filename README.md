@@ -43,10 +43,13 @@
 6. **Running your first feature:** 🏃
     - I. Create a StepDefinition class containing Java methods that define each step from the feature file
       ```java
-      // Example of a Step Definition in Java
-      @Given("user is on the login page")
-      public void userIsOnLoginPage() {
-      // code to navigate to login page
+      package step_definitions;
+      public class LoginSteps(){
+          // Example of a Step Definition in Java
+          @Given("user is on the login page")
+          public void userIsOnLoginPage() {
+             // code to navigate to login page
+          }
       }
       ```
     - II. Create a TestRunner class connecting feature file steps with Java methods from step definitions
@@ -59,6 +62,7 @@
                   - If set to false, it runs the test cases and throws an error if steps aren't defined
               - `monochrome = true` : makes the console logs more readable
               - `plugin = {""}`
+              - `tags = "@smoke"`
                 ```java
                 @RunWith(Cucumber.class)
                 @CucumberOptions(
