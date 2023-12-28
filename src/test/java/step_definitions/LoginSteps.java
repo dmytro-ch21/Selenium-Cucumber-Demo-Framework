@@ -20,6 +20,7 @@ public class LoginSteps {
     public void user_navigates_to_hrm_login_page() {
         driver.get("http://dev-hrm.yoll.io/index.php/auth/login");
     }
+
     @When("user enters username and password")
     public void user_enters_username_and_password() {
         loginPage.usernameInputBox.sendKeys("yoll-student");
@@ -50,12 +51,12 @@ public class LoginSteps {
         loginPage.usernameInputBox.sendKeys("invalid");
         loginPage.passwordInputBox.sendKeys("invalid");
     }
+
     @Then("user can see an error message")
     public void user_can_see_an_error_message() {
         String actualErrorMessage = loginPage.errorMessage.getText();
         String expectedErrorMessage = "Invalid credentials";
         Assert.assertEquals("Error message verification failed", expectedErrorMessage, actualErrorMessage);
     }
-
 
 }
