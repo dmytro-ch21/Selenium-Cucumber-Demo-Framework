@@ -168,3 +168,49 @@
 
 > ### More information about Gherkin syntax can be found here:
 > [Cucumber - Gherkin Syntax](https://cucumber.io/docs/gherkin/reference/)
+
+>## Framework Definition:
+>- In IT world a framework term is used widely.
+>- A framework in the IT world is a set of pre-written code, tools, and guidelines that are used to build a software.
+>
+>- Alternative:
+>  - Wer need a bookshelf.
+>    - First way is to go and do all by yourself from scratch: forest.
+>    - Second way, you can go to IKEA and get a flat box with materials and a manual how to build it.
+
+## Meeting for Defining Acceptance Criteria
+1. Sprint Planning Meeting - PO, Dev Team, SM
+2. Grooming/Backlog Refinement Sessions - PO, Dev Team, SM
+3. Three Amigos - A representative from Business(PO), Development(AO, TEch Lead or Sr. Dev), and Testing(Test Lead/Manager, Sr. QA/SDET)
+
+**ATDD** - Acceptance Test Driven Development - Guides the idea of defining a user story with AT(acceptance tests) so everyone involved can understand clearly what is needed to be done
+- Then Developers and Testers start to work on parallel
+
+**BDD** - Behavior Driven Development - It by default inherits ATDD and focuses on defining AT with BDD approach that describes user behavior and expected output.
+
+### ATDD vs BDD
+
+#### ATDD Approach
+User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."
+**Acceptance Criteria**:
+- The user should be able to request a password reset from the login page.
+- The system should send a password reset link to the user's registered email address.
+- The password reset link should expire after 24 hours.
+- The user must be able to set a new password using the reset link.
+
+#### BDD Approach
+User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."
+**Acceptance Criteria**:
+- **Scenario 1**: Requesting a password reset
+    - **Given** I am on the login page
+    - **When** I click on "Forgot Password"
+    - **Then** I should be prompted to enter my registered email address
+- **Scenario 2**: Receiving a password reset email
+    - **Given** I have requested a password reset
+    - **When** I enter my registered email address
+    - **Then** I should receive a password reset email within 5 minutes
+- **Scenario 3**: Resetting the password using the link
+    - **Given** I have received a password reset email
+    - **When** I click on the reset link in the email
+    - **And** I enter a new password
+    - **Then** my password should be updated, and I should be redirected to the login page
