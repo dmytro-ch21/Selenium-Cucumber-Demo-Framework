@@ -16,7 +16,7 @@ import org.junit.runner.RunWith;
         // if it is set to tru it won't run the test but just check if all steps are defined
         // if set to false it will run the tests regularly
         dryRun = false,
-        tags = "@loginInvalid or @loginValid",
+        tags = "@regression",
         monochrome = true
 )
 public class TestRunner {

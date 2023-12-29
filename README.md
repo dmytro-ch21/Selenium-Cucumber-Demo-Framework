@@ -84,6 +84,13 @@
           #Example 2:
           Feature: Reset Password Functionality
           ```  
+    - **`Background`** _Will run the steps of background before each Scenario_    
+        - Examples:
+          ```gherkin
+          #Example 1:
+          Background: Preliminary Steps
+             Given user navigates to hrm login page
+           ```
     - **`Scenario`:** _Brief use case description from a user perspective_
         - Examples:
             ```gherkin
@@ -191,26 +198,32 @@
 ### ATDD vs BDD
 
 #### ATDD Approach
-User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."
-**Acceptance Criteria**:
+_User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."_
+
+Acceptance Criteria:
+```text
 - The user should be able to request a password reset from the login page.
 - The system should send a password reset link to the user's registered email address.
 - The password reset link should expire after 24 hours.
 - The user must be able to set a new password using the reset link.
+```
 
 #### BDD Approach
-User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."
-**Acceptance Criteria**:
-- **Scenario 1**: Requesting a password reset
-    - **Given** I am on the login page
-    - **When** I click on "Forgot Password"
-    - **Then** I should be prompted to enter my registered email address
-- **Scenario 2**: Receiving a password reset email
-    - **Given** I have requested a password reset
-    - **When** I enter my registered email address
-    - **Then** I should receive a password reset email within 5 minutes
-- **Scenario 3**: Resetting the password using the link
-    - **Given** I have received a password reset email
-    - **When** I click on the reset link in the email
-    - **And** I enter a new password
-    - **Then** my password should be updated, and I should be redirected to the login page
+_User Story: "As a user, I want to reset my password so that I can access my account if I forget my password."_
+
+Acceptance Criteria:
+```gherkin
+Scenario: Requesting a password reset
+    - Given I am on the login page
+    - When I click on "Forgot Password"
+    - Then I should be prompted to enter my registered email address
+Scenario: Receiving a password reset email
+    - Given I have requested a password reset
+    - When I enter my registered email address
+    - Then I should receive a password reset email within 5 minutes
+Scenario: Resetting the password using the link
+    - Given I have received a password reset email
+    - When I click on the reset link in the email
+    - And I enter a new password
+    - Then my password should be updated, and I should be redirected to the login page
+```
