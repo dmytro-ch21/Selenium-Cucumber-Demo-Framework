@@ -17,7 +17,8 @@ import org.junit.runner.RunWith;
         // if set to false it will run the tests regularly
         dryRun = false,
         tags = "@regression",
-        monochrome = true
+        monochrome = true,
+        plugin = {"pretty", "html:target/reports/cucumber-reports.html" }
 )
 public class TestRunner {
     // no code need inside of this class!

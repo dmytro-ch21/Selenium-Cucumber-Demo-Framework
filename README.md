@@ -227,3 +227,9 @@ Scenario: Resetting the password using the link
     - And I enter a new password
     - Then my password should be updated, and I should be redirected to the login page
 ```
+
+### Parametrization in Cucumber 
+In cucumber, you can parametrize each step and make it more dynamic which will be more reusable
+In order to do that we need to understand what data we need to pass
+- String, Number, Boolean, Double
+- In order to parametrize a step we need to use cucumber regex

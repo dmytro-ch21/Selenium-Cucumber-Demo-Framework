@@ -3,6 +3,7 @@ package step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.cucumber.java.ja.且つ;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -21,11 +22,6 @@ public class LoginSteps {
         driver.get("http://dev-hrm.yoll.io/index.php/auth/login");
     }
 
-    @When("user enters username and password")
-    public void user_enters_username_and_password() {
-        loginPage.usernameInputBox.sendKeys("yoll-student");
-        loginPage.passwordInputBox.sendKeys("Bootcamp5#");
-    }
     @When("user clicks login button")
     public void user_clicks_login_button() {
         loginPage.loginButton.click();
@@ -46,16 +42,15 @@ public class LoginSteps {
         driver.quit();
     }
 
-    @When("user enters invalid username and password")
-    public void user_enters_invalid_username_and_password() {
-        loginPage.usernameInputBox.sendKeys("invalid");
-        loginPage.passwordInputBox.sendKeys("invalid");
+
+    @When("user logs in username {string} and password {string}")
+    public void user_enters_username_and_password(String username, String password) {
+            loginPage.login(username, password);
     }
 
-    @Then("user can see an error message")
-    public void user_can_see_an_error_message() {
+    @Then("user can see error message {string}")
+    public void user_can_see_error_message(String expectedErrorMessage) {
         String actualErrorMessage = loginPage.errorMessage.getText();
-        String expectedErrorMessage = "Invalid credentials";
         Assert.assertEquals("Error message verification failed", expectedErrorMessage, actualErrorMessage);
     }
 

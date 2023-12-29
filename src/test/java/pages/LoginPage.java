@@ -23,4 +23,11 @@ public class LoginPage {
     public WebElement loginButton;
     @FindBy(id = "spanMessage")
     public WebElement errorMessage;
+
+    public void login(String username, String password){
+        usernameInputBox.sendKeys(username);
+        passwordInputBox.sendKeys(password);
+        loginButton.click();
+    }
+
 }
