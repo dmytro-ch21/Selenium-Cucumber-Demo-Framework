@@ -373,4 +373,4 @@ Make sure that table column name matches with placeholder in steps. Otherwise, i
   - Login, Forms with error message fields, search bars...
 
 **_We can also have more than one Example tables per each Scenario Outline/Template_**
-[See example]("src/test/resources/features/user-search.feature")
+[See example]("https://github.com/dmytro-ch21/Selenium-Cucumber-Demo-Framework/blob/master/src/test/resources/features/user-search.feature")
