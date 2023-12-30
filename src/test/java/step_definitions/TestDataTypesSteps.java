@@ -1,6 +1,10 @@
 package step_definitions;
 
 import io.cucumber.java.en.Given;
+import pages.HomePage;
+
+import java.util.List;
+import java.util.Map;
 
 public class TestDataTypesSteps {
 
@@ -16,6 +20,5 @@ public class TestDataTypesSteps {
     public void test_with_string(String string) {
         System.out.println(string);
     }
-
 
 }

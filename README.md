@@ -342,3 +342,35 @@ public void i_enter_the_amount(double amount) {
     // Code to enter the payment amount
 }
 ```
+
+## Scenario Outline same as Scenario Template
+> Scenario Outline in Cucumber is a key feature for data-driven testing. 
+> It allows you to run the same test scenario multiple times with different sets of input values. 
+> This is extremely useful in cases where you need to test the same functionality under various conditions.
+
+Syntax:
+```gherkin
+Scenario Outline: Generic name for scenario
+    Given some step "<placeholder1>"
+    When some step "<placeholder2>"
+Examples:
+|placeholder1|placeholder2|
+|data1       |data2       |
+|value1      |value2      |
+```
+Here we can see that the steps have a placeholder wrapped in <> angle brackets.
+Angle brackets makes cucumber look for that placeholder in the Examples table column name
+Once found it will pick data from that column.
+Make sure that table column name matches with placeholder in steps. Otherwise, it won't pick the data from there.
+
+**_The Scenario Outlines are good candidate for:_**
+- Scenarios that are similar in steps and only data changes
+- Where each scenario is a new user web app usage
+  - For example one user can use both username and password as invalid creds
+  - Others can use differen tabs empty etc..
+  - Here each of these represents a new user launch to the app. 
+- We use outlines for:
+  - Login, Forms with error message fields, search bars...
+
+**_We can also have more than one Example tables per each Scenario Outline/Template_**
+[See example]("src/test/resources/features/user-search.feature")

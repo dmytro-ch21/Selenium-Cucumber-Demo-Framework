@@ -3,13 +3,13 @@ package step_definitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.ja.且つ;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.DriverFactory;
+
+import java.util.List;
 
 public class LoginSteps {
 
@@ -43,7 +43,7 @@ public class LoginSteps {
     }
 
 
-    @When("user logs in username {string} and password {string}")
+    @When("user logs in with username {string} and password {string}")
     public void user_enters_username_and_password(String username, String password) {
             loginPage.login(username, password);
     }

@@ -6,32 +6,33 @@ Feature: User Login Process
 
   @loginValid @smoke
   Scenario: Login with valid credentials
-    When user logs in username "yoll-student" and password "Bootcamp5#"
+    When user logs in with username "yoll-student" and password "Bootcamp5#"
     Then user is redirected to home page
     * framework browser quit
 
-  @loginInvalid
-  Scenario: Login with invalid credentials
-    When user logs in username "invalid" and password "invalid"
-    Then user can see error message "Invalid credentials"
+  @examplesTable
+  Scenario Outline: Login with invalid credentials <test_point>
+    When user logs in with username "<username>" and password "<password>"
+    Then user can see error message "<errorMessage>"
     * framework browser quit
+    Examples:
+      | test_point          | username | password | errorMessage             |
+      | when both invalid   | invalid  | invalid  | Invalid credentials      |
+      | when username empty |          | invalid  | Username cannot be empty |
+      | when password empty | invalid  |          | Password cannot be empty |
 
-  @emptyUsername
-  Scenario: Login with invalid credentials when username empty
-    When user logs in username "" and password "invalid"
-    Then user can see error message "Username cannot be empty"
-    * framework browser quit
 
-  @emptyPassword
-  Scenario: Login with invalid credentials when password empty
-    When user logs in username "invalid" and password ""
-    Then user can see error message "Password cannot be empty"
-    * framework browser quit
+#  @run
+#  Scenario: Test parameters with different data types
+#   # * test with boolean true
+#    * test with double 20.99
+#    * test with int 25
+#    * test with string "hello"
+#    * framework browser quit
 
-  @run @wip
-  Scenario: Test parameters with different data types
-   # * test with boolean true
-    * test with double 20.99
-    * test with int 25
-    * test with string "hello"
-    * framework browser quit
+
+
+
+
+
+
