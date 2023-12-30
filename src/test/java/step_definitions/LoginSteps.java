@@ -5,6 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import pages.HomePage;
 import pages.LoginPage;
 import utilities.DriverFactory;
@@ -52,6 +53,26 @@ public class LoginSteps {
     public void user_can_see_error_message(String expectedErrorMessage) {
         String actualErrorMessage = loginPage.errorMessage.getText();
         Assert.assertEquals("Error message verification failed", expectedErrorMessage, actualErrorMessage);
+    }
+
+    @Then("user can see following tabs:")
+    public void user_can_see_following_tabs(List<String> eTabs) throws InterruptedException {
+        Thread.sleep(5000);
+
+        List<String> expectedTabs = eTabs;
+        System.out.println("expectedTabs size: " + expectedTabs.size());
+        List<WebElement> actualTabs = homePage.tabs;
+        System.out.println("actualTabs size: " + actualTabs.size());
+
+        if(expectedTabs.size() != actualTabs.size()){
+            Assert.fail("The actual count of tabs is not matching expected count!");
+        }
+
+        for (int i = 0; i < actualTabs.size(); i++) {
+            String expectedTab = expectedTabs.get(i);
+            String actualTab = actualTabs.get(i).getText();
+            Assert.assertEquals("Tab verification failed.", expectedTab, actualTab);
+        }
     }
 
 }

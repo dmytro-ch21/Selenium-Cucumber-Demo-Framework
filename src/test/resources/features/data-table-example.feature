@@ -34,4 +34,10 @@ Feature: Demo the different ways of data tables in cucumber
       | 13684 | Jonathan Pete Moss | Abernathy |
       | 13724 | test2 nn           | Anotation |
 
-
+  @listOfMapsDataTable
+  Example: Data Table as a List of Maps
+    Given this is a data table as a List of Maps
+      | id    | first_mid_name     | last_name |
+      | 12313 | Omar Mark          | Ramo      |
+      | 13684 | Jonathan Pete Moss | Abernathy |
+      | 13724 | test2 nn           | Anotation |

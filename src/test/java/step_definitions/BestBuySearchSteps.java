@@ -7,8 +7,8 @@ import pages.BestBuyLandingPage;
 import utilities.DriverFactory;
 
 public class BestBuySearchSteps {
-
     private WebDriver driver = DriverFactory.getDriver("CHROME");
+
     private BestBuyLandingPage bestBuyLandingPage = new BestBuyLandingPage(driver);
 
     @Given("user lands on best buy")

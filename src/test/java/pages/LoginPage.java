@@ -11,7 +11,11 @@ import org.openqa.selenium.support.PageFactory;
  * Here PageFactory is used to initialize the WebElements with @FindBy annotations
  * */
 public class LoginPage {
+
+    protected WebDriver driver;
+
     public LoginPage(WebDriver driver){
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 

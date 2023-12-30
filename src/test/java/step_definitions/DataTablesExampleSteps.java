@@ -1,12 +1,13 @@
 package step_definitions;
 
 import io.cucumber.java.en.Given;
-import io.cucumber.messages.types.DataTable;
 
 import java.util.List;
 import java.util.Map;
 
-public class DatTableExampleSteps {
+public class DataTablesExampleSteps{
+
+
 
     @Given("this is a data table as a list")
     public void this_is_a_data_table_as_a_list(List<String> names) {
@@ -31,5 +32,19 @@ public class DatTableExampleSteps {
         }
     }
 
+    @Given("this is a data table as a List of Maps")
+    public void this_is_a_data_table_as_a_list_of_maps(List<Map<String, String>> employees){
+        System.out.println("--- This is the employees from step def as Maps: ---");
+        System.out.println("Print ids:");
+        for (Map<String, String> map: employees){
+            System.out.println(map.get("id"));
+        }
+
+        System.out.println("Print Full Names:");
+        for (Map<String, String> map: employees){
+            System.out.println(map.get("first_mid_name") + " " + map.get("last_name"));
+        }
+
+    }
 
 }
