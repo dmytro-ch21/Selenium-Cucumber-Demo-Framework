@@ -13,7 +13,7 @@ Feature: User Login Process
   @loginInvalid
   Scenario: Login with invalid credentials
     When user logs in username "invalid" and password "invalid"
-    Then user can see error message "Invalid credential"
+    Then user can see error message "Invalid credentials"
     * framework browser quit
 
   @emptyUsername
