@@ -343,6 +343,8 @@ public void i_enter_the_amount(double amount) {
 }
 ```
 
+---
+
 ## Scenario Outline same as Scenario Template
 > Scenario Outline in Cucumber is a key feature for data-driven testing. 
 > It allows you to run the same test scenario multiple times with different sets of input values. 
@@ -374,3 +376,56 @@ Make sure that table column name matches with placeholder in steps. Otherwise, i
 
 **_We can also have more than one Example tables per each Scenario Outline/Template_**
 [See example]("https://github.com/dmytro-ch21/Selenium-Cucumber-Demo-Framework/blob/master/src/test/resources/features/user-search.feature")
+
+---
+
+### Data Tables - In cucumber we can pass a larger set of data at once for a step in scenario
+That sets of data can be in different forms - List, Map, List<List>, List<Maps>
+
+Examples:
+- #### Data Table as a List
+```gherkin
+  @listDataTable
+  Example: Data table as a List
+    Given this is a data table as a list
+      | Omar  |
+      | John  |
+      | Merry |
+      | Jane  |
+```
+```java
+    @Given("this is a data table as a list")
+    public void this_is_a_data_table_as_a_list(List<String> names) {
+      // code
+    }
+```
+- #### Data Table as a Map
+```gherkin
+  @mapDataTable
+  Example: Data Table as a Map
+     Given this is a data table as a map
+       | first_name  | Omar |
+       | middle_name | Mark |
+       | last_name   | Ramo |
+```
+```java
+    @Given("this is a data table as a map")
+    public void this_is_a_data_table_as_a_map(Map<String, String> person){
+      // code  
+    }
+```
+- #### Data Table as a List<List<String>>
+```gherkin
+  @listOfListsDataTable
+  Example: Data Table as a List of Lists
+    Given this is a data table as a List of Lists
+      | 12313 | Omar Mark          | Ramo      |
+      | 13684 | Jonathan Pete Moss | Abernathy |
+      | 13724 | test2 nn           | Anotation |
+```
+```java
+    @Given("this is a data table as a List of Lists")
+    public void this_is_a_data_table_as_a_list_of_lists(List<List<String>> employees){
+      // code  
+    }
+```
