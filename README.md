@@ -429,3 +429,21 @@ Examples:
       // code  
     }
 ```
+
+- #### Data Table as a List<Map<String, String>>
+> Sometimes we need to pass our table with headers and in such cases use List of Maps where the header will be the key an column values as value to the key.
+```gherkin
+@listOfMapsDataTable
+Example: Data Table as a List of Maps
+   Given this is a data table as a List of Maps
+   | id    | first_mid_name     | last_name |
+   | 12313 | Omar Mark          | Ramo      |
+   | 13684 | Jonathan Pete Moss | Abernathy |
+   | 13724 | test2 nn           | Anotation |
+```
+```java
+    @Given("this is a data table as a List of Maps")
+    public void this_is_a_data_table_as_a_list_of_lists(List<Map<String,String>> employees){
+      // code  
+    }
+```

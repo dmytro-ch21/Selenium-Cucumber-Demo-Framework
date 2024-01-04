@@ -8,7 +8,7 @@ Feature: User Login Process
   Scenario: Login with valid credentials
     When user logs in with username "yoll-student" and password "Bootcamp5#"
     Then user is redirected to home page
-    * framework browser quit
+
 
   @examplesTable
   Scenario Outline: Login with invalid credentials <test_point>

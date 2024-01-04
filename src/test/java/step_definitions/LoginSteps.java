@@ -28,21 +28,10 @@ public class LoginSteps {
         loginPage.loginButton.click();
     }
 
-    @Then("user is redirected to home page")
-    public void user_is_redirected_to_home_page() {
-        String actualWelcomeMessage = homePage.welcomeMessage.getText();
-        String expectedWelcomeMessage = "Welcome Yoll";
-        // we will need to assert actual and expected
-        // The testNG structure of assert: Assert.assertEquals(actual, expected, message)
-        // In JUnit there are identical hard assert methods
-        Assert.assertEquals( "Welcome message verification failed", expectedWelcomeMessage, actualWelcomeMessage);
-    }
-
     @Then("framework browser quit")
     public void framework_browser_quit() {
         driver.quit();
     }
-
 
     @When("user logs in with username {string} and password {string}")
     public void user_enters_username_and_password(String username, String password) {
@@ -53,6 +42,16 @@ public class LoginSteps {
     public void user_can_see_error_message(String expectedErrorMessage) {
         String actualErrorMessage = loginPage.errorMessage.getText();
         Assert.assertEquals("Error message verification failed", expectedErrorMessage, actualErrorMessage);
+    }
+
+    @Then("user is redirected to home page")
+    public void user_is_redirected_to_home_page() {
+        String actualWelcomeMessage = homePage.welcomeMessage.getText();
+        String expectedWelcomeMessage = "Welcome Yoll";
+        // we will need to assert actual and expected
+        // The testNG structure of assert: Assert.assertEquals(actual, expected, message)
+        // In JUnit there are identical hard assert methods
+        Assert.assertEquals( "Welcome message verification failed", expectedWelcomeMessage, actualWelcomeMessage);
     }
 
     @Then("user can see following tabs:")

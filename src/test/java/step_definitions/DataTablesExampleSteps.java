@@ -7,8 +7,6 @@ import java.util.Map;
 
 public class DataTablesExampleSteps{
 
-
-
     @Given("this is a data table as a list")
     public void this_is_a_data_table_as_a_list(List<String> names) {
         System.out.println("--- This are the names from step def: ---");
@@ -44,7 +42,6 @@ public class DataTablesExampleSteps{
         for (Map<String, String> map: employees){
             System.out.println(map.get("first_mid_name") + " " + map.get("last_name"));
         }
-
     }
 
 }

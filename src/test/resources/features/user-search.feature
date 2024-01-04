@@ -4,7 +4,6 @@ Feature: User search functionality
   Scenario Outline: Search a product
     Given user lands on best buy
     When user enters "<text>" in search box
-    * framework browser quit
     @smartphones
     Examples:
       | text              |
