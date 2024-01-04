@@ -1,3 +1,4 @@
+@regression
 Feature: Demo the different ways of data tables in cucumber
   The Data tables will be used when we need to provide more than one data for a step
   In cases when we need to verify multiple points on a page at once with one launch to web page of the user

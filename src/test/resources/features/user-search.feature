@@ -1,3 +1,4 @@
+@regression
 Feature: User search functionality
 
   @bestBuyRun
