@@ -22,4 +22,15 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='menu']//b")
     public List<WebElement> tabs;
 
+
+    public void clickOnTabByName(String tabName){
+        for(WebElement tab: tabs){
+            if(tabName.equalsIgnoreCase(tab.getText())){
+                tab.click();
+                break;
+            }
+        }
+    }
+
+
 }

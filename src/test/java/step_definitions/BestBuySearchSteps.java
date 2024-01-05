@@ -4,10 +4,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pages.BestBuyLandingPage;
+import utilities.Driver;
 import utilities.DriverFactory;
 
 public class BestBuySearchSteps {
-    private WebDriver driver = DriverFactory.getDriver("CHROME");
+
+    private WebDriver driver = Driver.getDriverInstance();
     private BestBuyLandingPage bestBuyLandingPage = new BestBuyLandingPage(driver);
 
     @Given("user lands on best buy")

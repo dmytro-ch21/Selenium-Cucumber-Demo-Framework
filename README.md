@@ -447,3 +447,29 @@ Example: Data Table as a List of Maps
       // code  
     }
 ```
+
+## Current Issue of framework - Random Driver Instances Created
+> Solution - Singleton Design Pattern
+
+Singleton:
+There are 3 base rules to create a Singleton Class
+1. Private Constructor - to avoid instantiation of this class
+2. Private Static Member(Property) - contains the instance of the Driver
+3. Static Public Method - will act as a global access point (getter)
+
+Optional:
+4. Static Set Up Method - To intialize the browser to a very specific type (setter)
+5. Static Clean Up Method - will basically quit the driver
+
+## Reading from properties file
+
+1. The first step we create a file with extension of .properties
+   - This file will contain such things as: urls, credentials, environment configs etc..
+2. In order to convert/use this information in our code/scripts 
+3. We need to create an object of Properties class
+   - Once we create the object of properties it will be empty with no information
+4. To get the information from the file we will use FileInputStream
+   - We create an object of FileInputStream
+   - Then we pass to the constructor the path to the file itself (we usually start from source folder src/)
+   - Once the information if read , it is stored in the FileInputStream object as 0s and 1s
+   - Then we can load this information to our properties file so now our properties object has the information written to the .properties file
