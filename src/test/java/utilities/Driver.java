@@ -1,6 +1,7 @@
 package utilities;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
 Singleton:
@@ -21,7 +22,7 @@ public class Driver {
 
     public static WebDriver getDriverInstance(){
         if(driver == null){
-            System.out.println("No driver instance available. Check the Hooks class.");
+            driver = new ChromeDriver();
         }
         return driver;
     }
