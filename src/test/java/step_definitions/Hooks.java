@@ -13,7 +13,7 @@ public class Hooks {
     @Before
     public void setUp(){
         Driver.setDriver(DriverFactory.getDriver(PropertiesUtils.getBrowserType()));
-        Driver.getDriverInstance().manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+        Driver.getDriverInstance().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
     @After
