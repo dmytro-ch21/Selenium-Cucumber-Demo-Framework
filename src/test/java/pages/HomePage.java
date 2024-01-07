@@ -22,6 +22,9 @@ public class HomePage {
     @FindBy(xpath = "//div[@class='menu']//b")
     public List<WebElement> tabs;
 
+    @FindBy(id  = "menu_pim_viewPimModule")
+    public WebElement pimTab;
+
 
     public void clickOnTabByName(String tabName){
         for(WebElement tab: tabs){

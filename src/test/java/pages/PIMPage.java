@@ -28,6 +28,11 @@ public class PIMPage {
     @FindBy(xpath = "//table[@id='resultTable']/tbody/tr")
     public List<WebElement> tableBodyRows;
 
+    @FindBy(id = "footer")
+    public WebElement bottomPageLink;
+
+    @FindBy(id = "personal_txtEmpFirstName")
+    public WebElement firstNameInputBox;
 
     public Map<String, String> getEmployeeDataByIndex(int index){
 
@@ -45,6 +50,11 @@ public class PIMPage {
         employee.put("jobTitle", employeeJobTitle);
 
         return employee;
+    }
+
+    public WebElement returnEmployeeById(String id){
+        String xpath = "//*[text() = '"+id+"']";
+        return driver.findElement(By.xpath(xpath));
     }
 
 
