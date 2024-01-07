@@ -19,6 +19,9 @@ public class HomePage {
     @FindBy(id = "welcome")
     public WebElement welcomeMessage;
 
+    @FindBy(id  = "menu_pim_viewPimModule")
+    public WebElement pimTab;
+
     @FindBy(xpath = "//div[@class='menu']//b")
     public List<WebElement> tabs;
 

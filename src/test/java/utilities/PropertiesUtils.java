@@ -25,5 +25,15 @@ public class PropertiesUtils {
         return properties.getProperty("browserType");
     }
 
+    public static String getDemoQaBrowserWindowUrl(){
+        try {
+            loadPropertiesFile();
+        } catch (IOException e){
+            e.printStackTrace();
+            throw new RuntimeException("Failed to load the file at path: src/test/resources/qa_configs.properties");
+        }
+        return properties.getProperty("demoQaWindowsUrl");
+    }
+
 
 }
